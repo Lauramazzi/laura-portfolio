@@ -31,6 +31,21 @@
   .topnav a{font-size:13.5px;font-weight:600;color:var(--muted);padding:6px 2px;border-bottom:2px solid transparent;}
   .topnav a:hover{color:var(--ink);}
   @media (max-width:860px){ .layout{grid-template-columns:1fr !important;} .side{position:static !important;} .topnav .navlinks{display:none;} }
+  .btn-pdf{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--ink);background:var(--panel-2);border:1px solid var(--line);padding:9px 16px;border-radius:8px;cursor:pointer;}
+  .btn-pdf svg{width:15px;height:15px;}
+  .btn-pdf:hover{border-color:var(--accent-2);}
+
+  @media print{
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    @page{margin:14mm;}
+    body{background:var(--bg) !important;}
+    .topnav,.btn-pdf,.no-print{display:none !important;}
+    .layout{display:block !important;}
+    .side{position:static !important;margin-bottom:24px;}
+    .side > .card{break-inside:avoid;margin-bottom:14px;}
+    .sect{break-inside:avoid-page;padding-block:22px;}
+    .card{break-inside:avoid;}
+  }
 </style>
 </head>
 <body>
@@ -49,7 +64,13 @@
       <a href="#projetos">Projetos</a>
       <a href="#repos">Repositórios</a>
     </div>
-    <a href="https://wa.me/5516991569419" target="_blank" style="font-size:13px;font-weight:700;background:var(--accent);color:#0B0E14;padding:9px 16px;border-radius:8px;">Contato</a>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button class="btn-pdf" onclick="window.print()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        Baixar PDF
+      </button>
+      <a href="https://wa.me/5516991569419" target="_blank" style="font-size:13px;font-weight:700;background:var(--accent);color:#0B0E14;padding:9px 16px;border-radius:8px;">Contato</a>
+    </div>
   </div>
 </div>
 
