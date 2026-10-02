@@ -36,15 +36,22 @@
   .btn-pdf:hover{border-color:var(--accent-2);}
 
   @media print{
+    :root{
+      --bg:#FFFFFF; --panel:#F6F7F9; --panel-2:#EEF1F5;
+      --ink:#17191F; --muted:#444B57; --muted-2:#6B7280;
+      --accent:#2149B0; --accent-2:#2149B0;
+      --line:#D9DEE5;
+    }
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
     @page{margin:14mm;}
-    body{background:var(--bg) !important;}
+    body{background:#FFFFFF !important;color:var(--ink) !important;}
     .topnav,.btn-pdf,.no-print{display:none !important;}
     .layout{display:block !important;}
     .side{position:static !important;margin-bottom:24px;}
-    .side > .card{break-inside:avoid;margin-bottom:14px;}
-    .sect{break-inside:avoid-page;padding-block:22px;}
-    .card{break-inside:avoid;}
+    .side > .card{break-inside:avoid;margin-bottom:14px;box-shadow:none;}
+    .sect{break-inside:avoid-page;padding-block:18px;}
+    .card{break-inside:avoid;box-shadow:none;}
+    .num{color:#C7CDD6 !important;}
   }
 </style>
 </head>
